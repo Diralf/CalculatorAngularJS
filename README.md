@@ -1,0 +1,2 @@
+# CalculatorAngularJS
+Simple calculator
