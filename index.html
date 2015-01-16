@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="calculator">
+    <head>
+        <title>Calculator</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="assets/js/angular.min.js"></script>
+        <script type="text/javascript" src="app/calculatorApp.js"></script>
+        <script type="text/javascript" src="app/calculatorService.js"></script>
+    </head>
+    <body>
+        <div  ng-controller="inputController as input">
+            Values <br>
+            <input type="text" placeholder="X" ng-model="input.valueX" ng-change="input.pushValues()"><br>
+            <input type="text" placeholder="Y" ng-model="input.valueY" ng-change="input.pushValues()"><br>
+            Operation <br>
+            <select  ng-model="input.currentSign" ng-options="sign.operation as sign.title for sign in input.signs" ng-change="input.pushValues()" ></select>
+        </div><br>
+        <div ng-controller="outputController as output">
+            <input type="submit" value="calc" ng-click="output.calcResult()">
+            Result: {{output.result}}
+        </div>
+    </body>
+</html>
